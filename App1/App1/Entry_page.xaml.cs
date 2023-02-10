@@ -14,6 +14,7 @@ namespace App1
     {
         Editor ed;
         Button btn;
+        Label lbl;
         public Entry_page()
         {
             ed = new Editor
@@ -22,6 +23,13 @@ namespace App1
                 BackgroundColor = Color.Violet,
                 TextColor = Color.PeachPuff
             };
+            ed.TextChanged += Ed_TextChanged;
+            lbl = new Label
+            {
+                Text = "Mingi tekst",
+                TextColor = Color.DarkGreen,
+                BackgroundColor = Color.BlanchedAlmond
+            };
             btn= new Button
             {
                 Text = "Tagasi"
@@ -29,13 +37,25 @@ namespace App1
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
-                Children = { ed , btn},
+                Children = { ed ,lbl, btn},
                 BackgroundColor = Color.Orange
             };
             Content= st;
             btn.Clicked += Btn_Clicked;
         }
+        int i = 0;
+        private void Ed_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //lbl.Text = ed.Text;
+            ed.TextChanged -= Ed_TextChanged;
+            char key = e.NewTextValue?.LastOrDefault() ?? ' ';
 
+            if (key == 'A')
+            {
+                i++;
+                lbl.Text = key.ToString() + ": " + i;
+            }
+        }
         private async void Btn_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
