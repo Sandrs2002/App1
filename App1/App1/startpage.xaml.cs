@@ -33,16 +33,28 @@ namespace App1
                 TextColor = Color.DarkOliveGreen,
                 BackgroundColor = Color.BlanchedAlmond
             };
+            Button Foor_btn = new Button
+            {
+                Text="Ava valgusfoor",
+                TextColor = Color.DarkSeaGreen,
+                BackgroundColor = Color.BlanchedAlmond
+            };
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                Children = { Ent_btn, Timer_btn, Box_btn },
+                Children = { Ent_btn, Timer_btn, Box_btn, Foor_btn},
                 BackgroundColor = Color.DarkSalmon,
             };
             Content= st;
             Ent_btn.Clicked += Ent_btn_Clicked;
             Timer_btn.Clicked += Timer_btn_Clicked;
             Box_btn.Clicked += Box_btn_Clicked;
+            Foor_btn.Clicked += Foor_btn_Clicked;
+        }
+
+        private async void Foor_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Valgusfoor());
         }
 
         private async void Box_btn_Clicked(object sender, EventArgs e)
