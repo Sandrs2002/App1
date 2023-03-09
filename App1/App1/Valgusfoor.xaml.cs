@@ -26,6 +26,12 @@ namespace App1
                 TextColor = Color.LimeGreen,
                 BackgroundColor = Color.White
             };
+            Button broken_bnt = new Button
+            {
+                Text = "Broke",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
+            };
 
             lbp = new Label()
             {
@@ -100,12 +106,22 @@ namespace App1
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                Children = { pun, kol, roh, sisse_bnt, valja_bnt}
+                Children = { pun, kol, roh, sisse_bnt, valja_bnt, broken_bnt}
             };
 
             Content = st;
             sisse_bnt.Clicked += Sisse_bnt_Clicked;
             valja_bnt.Clicked += Valja_bnt_Clicked;
+            broken_bnt.Clicked += Broken_bnt_Clicked;
+        }
+
+        Random rnd;
+        private void Broken_bnt_Clicked(object sender, EventArgs e)
+        {
+            rnd = new Random();
+            pun.BackgroundColor = Color.FromRgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+            kol.BackgroundColor = Color.FromRgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+            roh.BackgroundColor = Color.FromRgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
         }
 
         private void Valja_bnt_Clicked(object sender, EventArgs e)
@@ -130,10 +146,15 @@ namespace App1
                     lbp.Text = "Stop!";
                     lbp.TextColor = Color.DarkRed;
                 }
-                else
-                {
+                else if (pun.BackgroundColor == Color.FromRgb(160, 160, 160))
+            {
                     lbp.Text = "Lülita valgusfoor sisse!";
                     lbp.TextColor = Color.Gray;
+                }
+                else
+                {
+                    lbp.Text = "Helista remonti";
+                    lbp.TextColor = Color.Beige;
                 }
         }
         private void Tap2_Tapped(object sender, EventArgs e)
@@ -146,7 +167,12 @@ namespace App1
             else if (kol.BackgroundColor == Color.FromRgb(160, 160, 160))
             {
                 lbk.Text = "Lülita valgusfoor sisse!";
-                lbp.TextColor = Color.Gray;
+                lbk.TextColor = Color.Gray;
+            }
+            else
+            {
+                lbk.Text = "Helista remonti";
+                lbk.TextColor = Color.Beige;
             }
         }
         private void Tap3_Tapped(object sender, EventArgs e)
@@ -159,8 +185,14 @@ namespace App1
             else if (roh.BackgroundColor == Color.FromRgb(160, 160, 160))
             {
                 lbr.Text = "Lülita valgusfoor sisse!";
-                lbp.TextColor = Color.Gray;
+                lbr.TextColor = Color.Gray;
             }
+            else
+            {
+                lbr.Text = "Helista remonti";
+                lbr.TextColor = Color.Beige;
+            }
+
         }
     }
 }

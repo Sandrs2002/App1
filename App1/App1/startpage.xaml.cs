@@ -23,26 +23,44 @@ namespace App1
             };
             Button Timer_btn = new Button
             {
-                Text="Ava Timer leht",
-                TextColor= Color.DarkSeaGreen,
-                BackgroundColor= Color.BlanchedAlmond
+                Text = "Ava Timer leht",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
             };
             Button Box_btn = new Button
             {
                 Text = "Ava Box leht",
-                TextColor = Color.DarkOliveGreen,
-                BackgroundColor = Color.BlanchedAlmond
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
             };
             Button Foor_btn = new Button
             {
-                Text="Ava valgusfoor",
-                TextColor = Color.DarkSeaGreen,
-                BackgroundColor = Color.BlanchedAlmond
+                Text = "Ava valgusfoor",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
+            };
+            Button Stepper_btn = new Button
+            {
+                Text = "Ava Stepper.Slider leht",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
+            };
+            Button Datetime_btn = new Button
+            {
+                Text = "Ava Date.Time leht",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
+            };
+            Button Lumememm_btn = new Button
+            {
+                Text = "Ava Lumememm leht",
+                TextColor = Color.LimeGreen,
+                BackgroundColor = Color.White
             };
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
-                Children = { Ent_btn, Timer_btn, Box_btn, Foor_btn},
+                Children = { Ent_btn, Timer_btn, Box_btn, Foor_btn, Stepper_btn, Datetime_btn, Lumememm_btn},
                 BackgroundColor = Color.DarkSalmon,
             };
             Content= st;
@@ -50,6 +68,25 @@ namespace App1
             Timer_btn.Clicked += Timer_btn_Clicked;
             Box_btn.Clicked += Box_btn_Clicked;
             Foor_btn.Clicked += Foor_btn_Clicked;
+            Stepper_btn.Clicked += Stepper_btn_Clicked;
+            Datetime_btn.Clicked += Datetime_btn_Clicked;
+            Lumememm_btn.Clicked += Lumememm_btn_Clicked;
+
+        }
+
+        private async void Lumememm_btn_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private async void Datetime_btn_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private async void Stepper_btn_Clicked(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private async void Foor_btn_Clicked(object sender, EventArgs e)
