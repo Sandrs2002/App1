@@ -16664,6 +16664,12 @@ namespace App1.Droid
 			// aapt resource value: 0x7F07008F
 			public const int tooltip_frame_light = 2131165327;
 			
+			// aapt resource value: 0x7F070090
+			public const int twice1 = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int twice2 = 2131165329;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
