@@ -14,7 +14,7 @@ namespace App1
     {
         List<ContentPage> pages = new List<ContentPage>() {new Entry_page(),new Timer_Page(), new BoxView_Page(),
             new Valgusfoor(), new StepperSlider_Page(), new DateTime_Page(), new Lumememm(), new Frame_Page(),
-            new Image_Page()};
+            new Image_Page() };
         List<string> tekstid = new List<string> { "Ava Entry leht","Ava Timer leht", "Ava BoxView leht",
             "Ava Valgusfoor leht", "Ava Stepper.Slider leht", "Ava Date.Time leht", "Ava Lumememm leht",
             "Ava Frame leht", "Ava Image leht"};
