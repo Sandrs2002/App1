@@ -98,9 +98,9 @@ namespace App1
             {
                 Children = { bucket, snow1, snow2, sw, stp, seen, unseen, color }
             };
-            AbsoluteLayout.SetLayoutBounds(bucket, new Rectangle(0.5, 0.1, 60, 60));
+            AbsoluteLayout.SetLayoutBounds(bucket, new Rectangle(0.6, 0.1, 60, 60));
             AbsoluteLayout.SetLayoutFlags(bucket, AbsoluteLayoutFlags.PositionProportional);
-            AbsoluteLayout.SetLayoutBounds(snow1, new Rectangle(0.5, 0.2, 150, 150));
+            AbsoluteLayout.SetLayoutBounds(snow1, new Rectangle(0.55, 0.2, 150, 150));
             AbsoluteLayout.SetLayoutFlags(snow1, AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(snow2, new Rectangle(0.5, 0.45, 200, 200));
             AbsoluteLayout.SetLayoutFlags(snow2, AbsoluteLayoutFlags.PositionProportional);
@@ -124,7 +124,7 @@ namespace App1
 
         private void Memm_Tapped(object sender, EventArgs e)
         {
-            if(snow2.BackgroundColor == Color.DarkBlue)
+            if(snow2.BackgroundColor == Color.Blue)
             {
                 lbl.Text = "Someone broke me";
                 lbl.TextColor = Color.White;
@@ -152,8 +152,9 @@ namespace App1
             else
             {
                 BackgroundImageSource = "snowview.jpg";
-                snow1.BackgroundColor = Color.DarkBlue;
-                snow2.BackgroundColor = Color.DarkBlue;
+                snow1.BackgroundColor = Color.Blue;
+                snow2.BackgroundColor = Color.Blue;
+                bucket.BackgroundColor = Color.Gray;
                 AbsoluteLayout.SetLayoutBounds(bucket, new Rectangle(0, 0.6, 60, 60));
                 AbsoluteLayout.SetLayoutFlags(bucket, AbsoluteLayoutFlags.PositionProportional);
                 AbsoluteLayout.SetLayoutBounds(snow1, new Rectangle(0.2, 0.6, 150, 150));
