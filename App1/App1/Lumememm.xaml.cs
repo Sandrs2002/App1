@@ -85,7 +85,7 @@ namespace App1
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
-            stp.ValueChanged += Stp_ValueChanged;
+            stp.ValueChanged += Stp_ValueChanged1;
             sw = new Switch
             {
                 IsToggled = true,
@@ -98,9 +98,9 @@ namespace App1
             {
                 Children = { bucket, snow1, snow2, sw, stp, seen, unseen, color }
             };
-            AbsoluteLayout.SetLayoutBounds(bucket, new Rectangle(0.6, 0.1, 60, 60));
+            AbsoluteLayout.SetLayoutBounds(bucket, new Rectangle(0.5, 0.1, 60, 60));
             AbsoluteLayout.SetLayoutFlags(bucket, AbsoluteLayoutFlags.PositionProportional);
-            AbsoluteLayout.SetLayoutBounds(snow1, new Rectangle(0.55, 0.2, 150, 150));
+            AbsoluteLayout.SetLayoutBounds(snow1, new Rectangle(0.5, 0.2, 150, 150));
             AbsoluteLayout.SetLayoutFlags(snow1, AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(snow2, new Rectangle(0.5, 0.45, 200, 200));
             AbsoluteLayout.SetLayoutFlags(snow2, AbsoluteLayoutFlags.PositionProportional);
@@ -120,6 +120,13 @@ namespace App1
             unseen.Clicked += Unseen_Clicked;
             color.Clicked += Color_Clicked;
 
+        }
+
+        private void Stp_ValueChanged1(object sender, ValueChangedEventArgs e)
+        {
+            bucket.WidthRequest = stp.Value;
+            snow1.WidthRequest = stp.Value;
+            snow2.WidthRequest = stp.Value;
         }
 
         private void Memm_Tapped(object sender, EventArgs e)
@@ -165,12 +172,6 @@ namespace App1
             }
         }
 
-        private void Stp_ValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            bucket.Padding = stp.Value;
-            snow1.Padding = stp.Value;
-            snow2.Padding = stp.Value;
-        }
 
         Random rnd;
 
