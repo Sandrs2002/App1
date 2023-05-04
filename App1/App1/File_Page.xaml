@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="App1.File_Page">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation ="Horizontal" >
+                <Entry x:Name="FileNameEntry" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Save" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <Editor Grid.Row="1" x:Name="TextEditor" FontSize="Large"/>
+            <ListView x:Name="fileList" Grid.Row="2" ItemSelected="FileList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}">
+                            <TextCell.ContextActions>
+                                <MenuItem x:Name="Delete" Text="Delete" IsDestructive="True"
+                            Clicked="Delete_Clicked"/>
+                                <MenuItem x:Name="ToList" Text="To the sequel" IsDestructive="True"
+                            Clicked="ToList_Clicked"/>
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="list" Grid.Row="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}">
+                            
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

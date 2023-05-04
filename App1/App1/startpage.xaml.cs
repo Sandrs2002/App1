@@ -14,14 +14,15 @@ namespace App1
     {
         List<ContentPage> pages = new List<ContentPage>() {new Entry_page(),new Timer_Page(), new BoxView_Page(),
             new Valgusfoor(), new StepperSlider_Page(), new DateTime_Page(), new Lumememm(), new Frame_Page(),
-            new Image_Page(), new Schedule() };
+            new Image_Page(), new Schedule(), new File_Page(), };
         List<string> tekstid = new List<string> { "Ava Entry leht","Ava Timer leht", "Ava BoxView leht",
             "Ava Valgusfoor leht", "Ava Stepper.Slider leht", "Ava Date.Time leht", "Ava Lumememm leht",
-            "Ava Frame leht", "Ava Image leht", "Ava Schedule leht"};
+            "Ava Frame leht", "Ava Image leht", "Ava Schedule leht", "Ava Fail leht",};
+        StackLayout st;
 
         public startpage()
         {
-            StackLayout st = new StackLayout
+            st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
                 BackgroundColor = Color.DarkSalmon,
@@ -33,14 +34,16 @@ namespace App1
                 {
                     Text = tekstid[i],
                     TabIndex = i,
-                    TextColor = Color.LimeGreen,
+                    TextColor = Color.Purple,
                     BackgroundColor = Color.White,
+                    FontFamily = "FactuallyHandwriting_PERSONAL_USE_ONLY.ttf#FactuallyHandwriting_PERSONAL_USE_ONLY",
+                    FontSize = 20
                 };
                 st.Children.Add(button);
                 button.Clicked += Navig_funktsioon;
             }
-
-            Content= st;
+            ScrollView sv = new ScrollView { Content = st };
+            Content= sv;
 
         }
 
